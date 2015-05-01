@@ -81,7 +81,7 @@ $swf = '<div>
 			</object>
 		</div>';
 
-$file_location = "put-ads-here";
+$file_location = "ad-files";
 
 ?>
 <!-- <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get"> 
