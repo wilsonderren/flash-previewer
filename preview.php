@@ -17,7 +17,7 @@ p.readout strong {color: #eee;}
 </head>
 <body>
 	
-<?
+<?php
 
 // custom urls and click tag variable names
 
