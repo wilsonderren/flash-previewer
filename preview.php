@@ -6,7 +6,7 @@
 <style type="text/css">
 html { overflow-y: scroll; }
 body {background: #333; color: #fff; margin:0; padding: 3em; font-family:'helvetica neue', arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
-h2 {border-top:4px solid #444; padding: 0.3em 0 1em 0;}
+h2 {border-top:4px solid #555; padding: 0.3em 0 1em 0; margin:0;}
 p {margin: 0; padding: 0.5em 0;}
 p em {font-style:normal; color: #999; font-size: 0.8em;}
 .image-container { padding: 1em 0; border-top:1px solid #444;}
