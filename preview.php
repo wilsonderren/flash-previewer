@@ -6,12 +6,16 @@
 <style type="text/css">
 html { overflow-y: scroll; }
 body {background: #333; color: #fff; margin:0; padding: 3em; font-family:'helvetica neue', arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+body.white {background: #fff;}
+body.white * {color: #555 !important; border-color: #eee !important;}
+
 h2 {border-top:4px solid #555; padding: 0.3em 0 1em 0; margin:0;}
 p {margin: 0; padding: 0.5em 0;}
 p em {font-style:normal; color: #999; font-size: 0.8em;}
 .image-container { padding: 1em 0; border-top:1px solid #444;}
 p.readout {color: #999; margin-top:2em;}
 p.readout strong {color: #eee;}
+a.toggle {position:fixed; top:10px; right:10px; display:inline-block; background:rgba(0,0,0,0.5); color: #fff; border-radius: 0.2em; padding: 7px 10px; text-decoration: none; font-weight: bold;}
 </style>
 
 </head>
@@ -174,6 +178,24 @@ $i++;
 
 <p class="readout">Test URI <strong><?php echo $click_track_test_url; ?></strong> &middot; Flash click tag variable name <strong><?php echo $click_tag_name; ?></strong></p>
 
-
 </body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+  $('body').append('<a href="#" class="toggle">toggle white background</a>');
+$('.toggle').click(function(){
+
+if($('body').attr('class')=='white'){$('body').removeClass('white')}else{
+	$('body').attr('class', 'white');
+}
+
+return false;
+
+});
+
+  });
+</script>
+
+
+
 </html>
