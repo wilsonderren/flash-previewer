@@ -31,7 +31,7 @@ p.readout strong {color: #eee;}
 // else
 // 	{$click_tag_name="clickTAG";}
 
-$click_track_test_url="http://www.mmu.ac.uk";
+$click_track_test_url="http://www2.mmu.ac.uk/study/postgraduate/";
 
 $click_tag_name="clickTag";
 
@@ -83,6 +83,29 @@ $swf = '<div>
 
 $file_location = "ad-files";
 
+function humanTiming ($time)
+{
+
+    $time = time() - $time; // to get the time since that moment
+
+    $tokens = array (
+        31536000 => 'year',
+        2592000 => 'month',
+        604800 => 'week',
+        86400 => 'day',
+        3600 => 'hour',
+        60 => 'minute',
+        1 => 'second'
+    );
+
+    foreach ($tokens as $unit => $text) {
+        if ($time < $unit) continue;
+        $numberOfUnits = floor($time / $unit);
+        return $numberOfUnits.' '.$text.(($numberOfUnits>1)?'s':'');
+    }
+
+}
+
 ?>
 <!-- <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get"> 
 <p>Test URI: <input type="text" name="click" size="60" value="<?php echo $click_track_test_url; ?>" /> <input type="submit" value="go" /></p>
@@ -133,7 +156,7 @@ echo $output_code;
 
 $human_filename = str_replace($file_location.'/', '', $f);
 
-echo '<p><strong>'.$image_data[0].'px wide &#215; '.$image_data[1].'px high</strong> &middot; '.round(filesize($f)/1024, 2).'Kb &middot; '.$human_filename.' <em>'.$image_data['mime'].'</em></p>';
+echo '<p><strong>'.$image_data[0].'px wide &#215; '.$image_data[1].'px high</strong> &middot; '.round(filesize($f)/1024, 2).'Kb &middot; '.$human_filename.' <em>Last updated '.humantiming(filemtime($f)).' ago &middot; '.$image_data['mime'].'</em></p>';
 
 echo '</div>';
 
